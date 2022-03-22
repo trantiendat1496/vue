@@ -7,7 +7,11 @@ Vue.use(VueRouter);
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    redirect: '/fe-home',
+    redirect: '/login',
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login.vue'),
   },
   {
     path: "/",
@@ -16,15 +20,16 @@ const routes: Array<RouteConfig> = [
       {
         path: "home",
         component: () => import("@/views/home.vue"),
+      },{
+        path: "home",
+        component: () => import("@/views/home.vue"),
+        children: [
+          {
+            path: "employee/:id",
+            component: () => import("@/views/employee-detail.vue"),
+          }
+        ]
       },
-      {
-        path: "fe-home",
-        component: () => import("@/views/HomeView.vue"),
-      },
-      {
-        path: "about",
-        component: () => import("@/views/AboutView.vue"),
-      }
     ]
   }
 ];
@@ -36,9 +41,9 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // const authState = localStorage.getItem('authState')
-  // if (to.path !== '/login' && authState !== 'signedin') next({ path: '/login' })
-  // else next()
+  const authState = localStorage.getItem('authState')
+  if (to.path !== '/login' && authState !== 'signedin') next({ path: '/login' })
+  else next()
   next()
 })
 

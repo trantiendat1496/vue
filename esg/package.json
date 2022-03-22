@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "mobx": "^6.4.2",
     "mobx-vue": "^2.2.0",
     "register-service-worker": "^1.7.2",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@mdi/font": "^6.5.95",
+    "@types/lodash-es": "^4.17.6",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
