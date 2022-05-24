@@ -12,18 +12,19 @@ export class LoginViewModel {
   @action login() {
     try {
       // Auth.signIn(this.email, this.password)
-      localStorage.setItem("authState", "signedin");
       console.log(this.username, this.password);
 
-      if (this.username === "admin1234" && this.password === "1") {
+      if (this.username === "admin" && this.password === "1") {
+        localStorage.setItem("authState", "signedin");
         globalStore.router.push("home").catch(() => true);
       }
     } catch (error: any) {
       if (error.name === "UserNotConfirmedException") {
-        // this.onChangeState('register_confirmation')
+        this.onChangeState("register_confirmation");
       }
-      // this.errorMsg = error.message
-      // snackController.error(error.message)
     }
+  }
+  onChangeState(arg0: string) {
+    throw new Error("Method not implemented.");
   }
 }

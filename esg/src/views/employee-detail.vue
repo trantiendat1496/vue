@@ -50,9 +50,7 @@
             label="Department Name"
             required
           ></v-select>
-          <v-btn :disabled="!valid" color="success" class="mr-4">
-            Validate
-          </v-btn>
+          <v-btn :disabled="!valid" color="success" class="mr-4"> Validate </v-btn>
         </v-form>
       </div>
     </v-expand-transition>
@@ -85,9 +83,7 @@ export default class EmployeeDetail extends Vue {
   items: string[] = [];
   listAge: number[] = [];
   checkbox = false;
-  emploeeDetail = this.vm.employeeData.find(
-    (x) => x.id == router.currentRoute.params.id
-  );
+  emploeeDetail = this.vm.employeeData.find((x) => x.id == router.currentRoute.params.id);
   mounted() {
     for (let index = 18; index <= 50; index++) {
       this.listAge = [...this.listAge, index];

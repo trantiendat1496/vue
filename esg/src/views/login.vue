@@ -32,7 +32,7 @@ export default class Login extends Vue {
     (v: any) => !!v || "Name is required",
     (v: any) => (v && v.length <= 10) || "Name must be less than 10 characters",
   ];
-  passRules = [(v: any) => !!v || "Name is required"];
+  passRules = [(v: any) => !!v || "Password is required"];
 }
 </script>
 
