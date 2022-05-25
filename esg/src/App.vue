@@ -1,25 +1,20 @@
 <template>
   <div id="app">
-    <!-- <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav> -->
     <router-view />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import { globalStore } from './stores/global-store'
+import { Component, Vue } from "vue-property-decorator";
+import { globalStore } from "./stores/global-store";
 
 @Component
 export default class App extends Vue {
   mounted() {
-    globalStore.router = this.$router
+    globalStore.router = this.$router;
   }
 }
 </script>
-
 
 <style lang="scss">
 #app {

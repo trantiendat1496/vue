@@ -25,6 +25,10 @@ const routes: Array<RouteConfig> = [
         path: "employee/:id",
         component: () => import("@/views/employee-detail.vue"),
       },
+      {
+        path: "employee",
+        component: () => import("@/views/employee.vue"),
+      },
     ],
   },
 ];
@@ -37,8 +41,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   const authState = localStorage.getItem("authState");
-  if (to.path !== "/login" && authState !== "signedin")
-    next({ path: "/login" });
+  if (to.path !== "/login" && authState !== "signedin") next({ path: "/login" });
   else next();
   next();
 });

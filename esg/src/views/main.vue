@@ -136,7 +136,7 @@ export default class MainContainer extends Vue {
     {
       icon: Icon.Top,
       title: "TOP",
-      link: "/sample",
+      link: "/employee",
     },
     {
       title: "企業情報検索",

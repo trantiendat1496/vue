@@ -3,7 +3,7 @@
     <h2>Top 5 nhân viên có lương cao nhất</h2>
     <v-data-table
       :headers="headers"
-      :items="vm.employeeData"
+      :items="vm.topSalary"
       :items-per-page="5"
       class="elevation-1 mt-4"
       hide-default-footer
@@ -12,7 +12,7 @@
     <h2 class="mt-10">Danh sách nhân viên của phòng ban có tổng lương cao nhất</h2>
     <v-data-table
       :headers="headers"
-      :items="vm.topSalary"
+      :items="vm.topTotalSalary"
       :items-per-page="5"
       class="elevation-1 mt-4"
       hide-default-footer
@@ -38,7 +38,7 @@ export default class Home extends Vue {
 
   mounted() {
     // console.log(this.vm.employeeData);
-    this.vm.topSalary;
+    // this.vm.topSalary;
   }
 }
 </script>

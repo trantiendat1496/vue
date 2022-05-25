@@ -83,15 +83,13 @@ export default class EmployeeDetail extends Vue {
   items: string[] = [];
   listAge: number[] = [];
   checkbox = false;
-  emploeeDetail = this.vm.employeeData.find((x) => x.id == router.currentRoute.params.id);
+  emploeeDetail = this.vm.topSalary.find((x) => x.id == router.currentRoute.params.id);
   mounted() {
     for (let index = 18; index <= 50; index++) {
       this.listAge = [...this.listAge, index];
     }
 
-    this.items = uniqBy(this.vm.employeeData, "departmentName").map(
-      (x) => x.departmentName
-    );
+    this.items = uniqBy(this.vm.topSalary, "departmentName").map((x) => x.departmentName);
 
     this.name = this.emploeeDetail.name;
     this.age = this.emploeeDetail.age;
